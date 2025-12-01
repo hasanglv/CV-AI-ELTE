@@ -1,195 +1,117 @@
-🌈✨ CV Evaluator – AI-Powered Semantic Resume Analysis Platform ✨🌈
-<p align="center"> <img src="https://img.shields.io/badge/Node.js-Backend-3C873A?style=for-the-badge&logo=node.js&logoColor=white" /> <img src="https://img.shields.io/badge/Express.js-Framework-000000?style=for-the-badge&logo=express&logoColor=white" /> <img src="https://img.shields.io/badge/MongoDB-Database-4ea94b?style=for-the-badge&logo=mongodb&logoColor=white" /> <img src="https://img.shields.io/badge/PostgreSQL-Structured_DB-336791?style=for-the-badge&logo=postgresql&logoColor=white" /> <img src="https://img.shields.io/badge/ElasticSearch-Semantic_Search-005571?style=for-the-badge&logo=elastic&logoColor=white" /> <img src="https://img.shields.io/badge/Redis-Caching-DC382D?style=for-the-badge&logo=redis&logoColor=white" /> <img src="https://img.shields.io/badge/JWT-Authentication-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" /> </p>
-🌟 Overview
+📄 CV Evaluator – Full Stack AI Application
 
-The CV Evaluator is an AI-powered, full-stack system that analyzes a CV against a job description using:
-🎯 Semantic similarity (BERT-style embeddings)
-🔍 Keyword scoring (ElasticSearch-style search engine)
-🧠 Rule-based ML scoring engine (0–100 match score)
-📚 Education & experience relevance
-📄 PDF-based report generation
+This project is a full-stack AI-powered CV evaluation tool that analyzes CVs against job descriptions and returns a semantic compatibility score with detailed breakdowns. The system includes both frontend and backend components built with modern web and AI technologies.
 
-This project represents a modern HR-Tech evaluation tool built with a multi-layer Node.js architecture.
+🌐 Technologies Used
+Frontend
 
-👥 Team Members
-👤 Name	💼 Role
-Hasan Guliyev	Backend Development
-Rashad Musayev	Backend Development
-Toghrul Gululu	Frontend Development
-Laczkó András	Frontend Development
-💡 Motivation
+Node.js UI Rendering
 
-Recruiters often deal with challenges such as:
+Tailwind CSS
 
-🐌 Slow manual review
+Axios
 
-🤔 Subjective judgments
+JWT Session Handling
 
-🔁 Inconsistent evaluations
+Responsive Components
 
-📂 High volume of candidates
+Backend
 
-❓ Difficulty detecting missing skills
+Node.js + Express
 
-Our goal was to build a smart automation tool that:
+BERT-style Embedding Engine (semantic similarity)
 
-✨ Understands CVs using AI
-✨ Compares CV & JD by meaning, not just keywords
-✨ Highlights missing skills & experience gaps
-✨ Generates accurate match scores
-✨ Helps recruiters save time
+ElasticSearch-style Keyword Ranking
 
-🧠 Key Features (Colorful Summary)
+Redis Caching Layer
 
-🔥 AI-Powered Semantic Matching
-🧩 BERT-style Embedding Engine
-🔍 ElasticSearch-like Keyword Ranking
-📊 Rule-Based Scoring (0–100%)
-📘 Education Relevance Detector
-⚡ Redis Caching Layer
-🔐 JWT Authentication System
-📝 PDF Report Generation
-💾 PostgreSQL + MongoDB Storage
-📈 Dashboard & Analytics
+PostgreSQL (structured evaluations & users)
 
-🏗 Backend Implementation Plan
-🌐 1. Architecture & Technology (Oct 1 – Oct 6)
+MongoDB (raw CV/JD text storage)
 
-🚀 Node.js + Express
+JWT Authentication
 
-🗂 PostgreSQL & MongoDB
+multer (file uploads)
 
-🔎 ElasticSearch (keyword & semantic ranking)
+pdf-parse (text extraction)
 
-⚡ Redis (caching)
+PDFKit (report generation)
 
-🔐 JWT authentication
+📦 Getting Started
 
-🧩 2. Core Modules (Oct 7 – Nov 3)
-📥 Upload System (Hasan)
+Follow the steps below to set up and run the project locally.
 
-PDF upload (≤ 5MB)
+1. Clone the Repository
+git clone https://github.com/hasanglv/CV-AI-ELTE.git
+cd CV-AI-ELTE
 
-Text extraction via pdf-parse
+2. Install Dependencies
 
-🧠 Evaluation Engine (Rashad)
+Install backend & frontend dependencies:
 
-BERT-style embeddings
+npm install
 
-ElasticSearch keyword scoring
+3. Set Up Environment Variables
 
-Rule-based scoring
+Create a .env file inside the backend directory:
 
-Education & experience evaluation
+OPENAI_API_KEY=your_openai_api_key_here
+PORT=5000
+PDF_STORAGE_PATH=uploads
+MAX_FILE_SIZE=5242880
 
-📊 Dashboard API (Hasan)
 
-Fetch scores, sections, history
+🔐 Do not commit your .env file.
 
-User auth system
+4. Run the Application
+npm run dev
 
-🗄 3. Database & APIs (Nov 4 – Nov 17)
 
-Users, CVs, Evaluations schema
+This starts the backend and frontend development servers.
 
-Search API
+📁 Project Structure
+CV-AI-ELTE/
+├── backend/
+│   ├── server.js
+│   ├── bertEmbeddingEngine.js
+│   ├── semanticSearchEngine.js
+│   ├── redisCacheManager.js
+│   ├── mlRuleScoringEngine.js
+│   ├── textNormalizationUtils.js
+│   ├── keywordExtractionService.js
+│   ├── semanticIndexBuilder.js
+│   ├── modelInferenceAdapter.js
+│   └── uploads/
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── .gitignore
+├── README.md
+└── package.json
 
-Redis caching for fast evaluation
+🧠 System Overview
 
-🧪 4. Testing & Optimization (Nov 18 – Dec 1)
+The backend implements a multi-stage AI evaluation pipeline:
 
-Unit tests
+PDF Text Extraction
 
-Upload → Evaluate → Dashboard integration
+NLP Preprocessing & Normalization
 
-Query optimization
+BERT-style Embedding Vector Generation
 
-🎁 5. Finalization (Dec 2 – Dec 13)
+Semantic Similarity Computation
 
-📄 PDF report generator
+Keyword Extraction + ElasticSearch-style Ranking
 
-🎨 UI integration
+Education & Experience Matching
 
-🐞 Bug fixes
+Rule-Based Scoring Engine (0–100%)
 
-🎨 Frontend Implementation Plan
-🖥 1. Tech Stack (Oct 1 – Oct 6)
+PDF Report Generation
 
-Node.js rendering layer
+Redis Caching for High Performance
 
-TailwindCSS
-
-React Query / Redux
-
-JWT session handling
-
-📦 2. Core UI Components (Oct 7 – Nov 3)
-📤 Upload Page (Toghrul)
-
-Drag-and-drop
-
-Real-time evaluation loading
-
-📊 Detailed Evaluation Page (András)
-
-Skill match
-
-Experience relevance
-
-Education match
-
-Missing keywords
-
-Recommendations
-
-Charts & visual indicators
-
-🗂 Dashboard
-
-Sorting
-
-Filtering
-
-Search
-
-🎯 Final Product Summary
-
-Your final application provides:
-
-🌟 AI-powered CV vs JD comparison
-📊 0–100 scoring system
-📘 Skills, experience, education breakdown
-❗ Missing keywords list
-📄 PDF report export
-🧭 Dashboard for managing evaluations
-🔐 Secure user login
-
-This system looks and behaves like a professional HR evaluation platform.
-
-🧩 System Components (Colorful Table)
-Component	Purpose
-🧠 AI Engine	Embeddings + semantic similarity
-🔍 Search Engine	Keyword & fuzzy scoring
-🧮 ML Rule Engine	Weighted scoring logic
-✨ NLP Pipeline	Text normalization & cleaning
-📄 PDF Processor	Extracts data from documents
-🗂 Dashboard	User interface for results
-🔐 Auth System	JWT-secured login
-⚡ Redis Cache	Performance boost
-🧭 How to Use
-
-1️⃣ Upload your CV
-2️⃣ Upload the Job Description
-3️⃣ System automatically evaluates both
-4️⃣ View the beautiful analysis dashboard
-5️⃣ Download the PDF report
-6️⃣ Track past evaluations
-
-🔮 Future Improvements
-
-✨ Use real HuggingFace BERT models
-✨ Integrate a true ElasticSearch cluster
-✨ Add multi-language evaluation
-✨ Add ATS (Applicant Tracking System) integration
-✨ AI-generated interview questions
-✨ Recruiter collaboration dashboard
+Secure JWT Authentication

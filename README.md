@@ -2,7 +2,7 @@
 
 This project is a full-stack AI-powered CV evaluation system that analyzes CVs against job descriptions and generates a semantic compatibility score with detailed insights. The platform simulates a modern HR-tech tool used by recruitment teams to evaluate candidates efficiently using AI, NLP, and rule-based scoring.
 
-The system processes uploaded PDF files, extracts text, evaluates semantic similarity, identifies missing keywords, checks education relevance, and generates recruiter-friendly reports..
+The system processes uploaded PDF files, extracts text, evaluates semantic similarity, identifies missing keywords, checks education relevance, and generates recruiter-friendly reports.
 
 ---
 
